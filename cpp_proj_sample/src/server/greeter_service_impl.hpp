@@ -5,8 +5,7 @@
 //  Created by hatlonely on 2018/1/4.
 //
 
-#ifndef greeter_service_impl_hpp
-#define greeter_service_impl_hpp
+#pragma once
 
 #include "greeter.grpc.pb.h"
 #include <grpc/grpc.h>
@@ -29,4 +28,3 @@ namespace hl {
     };
 }
 
-#endif /* greeter_service_impl_hpp */
