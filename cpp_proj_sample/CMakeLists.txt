@@ -23,13 +23,14 @@ AUX_SOURCE_DIRECTORY(src SRC)
 AUX_SOURCE_DIRECTORY(proto_out PROTO)
 
 INCLUDE_DIRECTORIES(
-    "include"
-    "proto_out"
-    "/usr/local/include"
+    "include/"
+    "src/"
+    "proto_out/"
+    "/usr/local/include/"
 )
 
 LINK_DIRECTORIES(
-    "/usr/local/lib"
+    "/usr/local/lib/"
 )
 
 ADD_DEFINITIONS(
@@ -40,8 +41,9 @@ ADD_EXECUTABLE(cpp_proj_sample ${SRC} ${PROTO})
 
 TARGET_LINK_LIBRARIES(
     cpp_proj_sample
-    grpc
     protobuf
+    grpc
+    grpc++
 )
 
 ADD_CUSTOM_COMMAND(
