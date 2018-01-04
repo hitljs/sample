@@ -18,6 +18,7 @@ IF(gcov)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -fPIC")
 ENDIF()
 
+AUX_SOURCE_DIRECTORY(include INCLUDE)
 AUX_SOURCE_DIRECTORY(src SRC)
 AUX_SOURCE_DIRECTORY(proto_out PROTO)
 
