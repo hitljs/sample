@@ -16,8 +16,14 @@ namespace hl {
         return grpc::Status::OK;
     }
     
-    void RunServer() {
-        std::string server_address("0.0.0.0:50051");
+    
+    int GreeterServer::Init(const libconfig::Setting& setting) {
+        _address = setting.lookup("address").c_str();
+        return 0;
+    }
+    
+    int GreeterServer::Run() {
+        std::string server_address(_address);
         GreeterServiceImpl service;
         
         grpc::ServerBuilder builder;
@@ -27,6 +33,7 @@ namespace hl {
         std::cout << "Server listening on " << server_address << std::endl;
         
         server->Wait();
+        
+        return 0;
     }
-    
 }

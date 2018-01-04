@@ -44,6 +44,7 @@ TARGET_LINK_LIBRARIES(
     protobuf
     grpc
     grpc++
+    config++
 )
 
 ADD_CUSTOM_COMMAND(
