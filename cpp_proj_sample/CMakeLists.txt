@@ -19,9 +19,11 @@ IF(gcov)
 ENDIF()
 
 AUX_SOURCE_DIRECTORY(src SRC)
+AUX_SOURCE_DIRECTORY(proto_out PROTO)
 
 INCLUDE_DIRECTORIES(
     "include"
+    "proto_out"
     "/usr/local/include"
 )
 
@@ -33,11 +35,12 @@ ADD_DEFINITIONS(
     -DCPP_PROJ_SAMPLE_VERSION="${VERSION}"
 )
 
-ADD_EXECUTABLE(cpp_proj_sample ${SRC})
+ADD_EXECUTABLE(cpp_proj_sample ${SRC} ${PROTO})
 
 TARGET_LINK_LIBRARIES(
     cpp_proj_sample
-    log4cplus
+    grpc
+    protobuf
 )
 
 ADD_CUSTOM_COMMAND(
