@@ -16,6 +16,7 @@ int main(int argc, const char* argv[]) {
         return 0;
     }
     
+    //grpc channel 需要每次获取
     auto channel = grpc::CreateChannel(argv[1], grpc::InsecureChannelCredentials());
     std::unique_ptr<Greeter::Stub> stub = Greeter::NewStub(channel);
     grpc::ClientContext context;
