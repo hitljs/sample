@@ -46,6 +46,7 @@ TARGET_LINK_LIBRARIES(
     grpc
     grpc++
     config++
+    log4cplus
 )
 
 TARGET_LINK_LIBRARIES(
@@ -53,6 +54,7 @@ TARGET_LINK_LIBRARIES(
     protobuf
     grpc
     grpc++
+    log4cplus
 )
 
 ADD_CUSTOM_COMMAND(
@@ -65,5 +67,6 @@ ADD_CUSTOM_COMMAND(
     COMMAND cp -rf ${CPP_PROJ_SAMPLE_BINARY_DIR}/greeter_server ${CPP_PROJ_SAMPLE_BINARY_DIR}/output/bin/
     COMMAND cp -rf ${CPP_PROJ_SAMPLE_BINARY_DIR}/greeter_client ${CPP_PROJ_SAMPLE_BINARY_DIR}/output/bin/
     COMMAND cp -rf ${CPP_PROJ_SAMPLE_SOURCE_DIR}/conf/*.cfg ${CPP_PROJ_SAMPLE_BINARY_DIR}/output/conf/
+    COMMAND cp -rf ${CPP_PROJ_SAMPLE_SOURCE_DIR}/conf/*.ini ${CPP_PROJ_SAMPLE_BINARY_DIR}/output/conf/
 )
 

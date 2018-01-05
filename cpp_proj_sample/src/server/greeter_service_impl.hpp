@@ -24,7 +24,7 @@ namespace hl {
         int Run();
         
     private:
-        std::string _address;
+        std::string address;
     };
 }
 
